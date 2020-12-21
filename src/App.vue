@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <h1>
       {{name}}
     </h1>
@@ -18,10 +18,13 @@ export default {
 </script>
 
 <style lang="scss">
-$primary-color: white;
-$bg: black;
-h1 {
-  color: $primary-color;
-  background-color: $bg;
+@import "./assets/css/index.scss";
+.main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("./assets/img/1562391151583.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>

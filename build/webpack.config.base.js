@@ -8,7 +8,7 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].[hash:8].js'
+    filename: 'js/[name].[hash:8].js'
   },
   module: {
     rules: [
