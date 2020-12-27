@@ -18,9 +18,15 @@ const config = {
     new CleanWebpackPlugin()
   ],
   optimization: {
-    runtimeChunk: 'single',
+    runtimeChunk: {
+      name: entrypoint => `runtime~${entrypoint.name}`
+    },
     splitChunks: {
       cacheGroups: {
+        commons: {
+          name: "commons",
+          chunks: "all"
+        },
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',

@@ -3,8 +3,10 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
+  target: 'electron-renderer',
   entry: {
-    index: path.resolve(__dirname, '../src/index.js')
+    index: path.resolve(__dirname, '../src/renderer/main/index.js'),
+    dialog: path.resolve(__dirname, '../src/renderer/assist/index.js')
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -74,8 +76,16 @@ const config = {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: 'index.html'
+      template: './src/renderer/assets/index.html',
+      title: 'electron main',
+      filename: 'index.html',
+      chunks: ['index','commons','vendors']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/renderer/assets/index.html',
+      title: 'electron dialog',
+      filename: 'dialog.html',
+      chunks: ['dialog','commons','vendors']
     }),
   ]
 };
