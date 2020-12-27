@@ -8,31 +8,19 @@
 </template>
 
 <script>
-const { remote } = require('electron');
+import newWindow from '../../main/utils/window';
 
 export default {
   name: 'appMain',
   data() {
     return {
       name: 'Hello World!!',
+      win: null
     }
   },
   methods: {
     openWindow() {
-      const win = new remote.BrowserWindow({
-        width: 900,
-        height: 600,
-        show: false,
-        webPreferences: {
-          nodeIntegration: true
-        }
-      });
-
-      win.loadURL('http://localhost:9527/dialog.html');
-
-      win.once('ready-to-show', () => {
-        win.show()
-      })
+      this.win = new newWindow();
     }
   }
 }
