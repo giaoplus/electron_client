@@ -1,6 +1,7 @@
-const { BrowserWindow } = require('electron').remote;
+const { BrowserWindow } = require('electron')
+const path = require('path')
 
-class newWindow {
+class ChildWindow {
   constructor(config) {
     this.win = new BrowserWindow({
       width: 900,
@@ -11,7 +12,12 @@ class newWindow {
       }
     })
 
-    this.win.loadURL('http://localhost:9527/dialog.html');
+    if(isDev) {
+      this.win.loadURL('http://localhost:3000/dialog.html')
+      this.win.webContents.openDevTools();
+    }else{
+      this.win.loadFile(path.resolve(__dirname, './dist/dialog.html'))
+    }
 
     this.win.once('ready-to-show', () => {
       this.win.show();
@@ -23,4 +29,4 @@ class newWindow {
   }
 }
 
-module.exports = newWindow;
+module.exports = ChildWindow

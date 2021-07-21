@@ -5,20 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "npm run dev",
-      "name": "启动页面服务",
+      "command": "npm run dev:vite",
+      "name": "dev server",
       "request": "launch",
       "type": "node-terminal"
     },
     {
-      "type": "node",
+      "command": "npm run dev:electron",
+      "type": "node-terminal",
       "request": "launch",
-      "name": "启动客户端",
-      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
-      "program": "${workspaceFolder}/src/main/index.js",
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
+      "name": "client",
     }
   ]
 }

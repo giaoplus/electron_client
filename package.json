@@ -1,53 +1,34 @@
 {
   "name": "electron_client",
-  "version": "1.0.0",
-  "description": "client with electron and vue",
-  "main": "main.js",
+  "version": "0.0.0",
+  "main": "./src/main/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "dev": "webpack-dev-server --open --config build/webpack.config.dev.js",
-    "build": "webpack --config build/webpack.config.prod.js"
+    "dev:vite": "vite",
+    "dev:electron": "cross-env NODE_ENV=development electron ./src/main/main.js",
+    "build:vite": "vite build",
+    "build:electron": "electron-builder",
+    "serve": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/giaoplus/electron_client.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/giaoplus/electron_client/issues"
-  },
-  "homepage": "https://github.com/giaoplus/electron_client#readme",
   "dependencies": {
-    "lodash": "^4.17.20",
-    "moment": "^2.29.1",
-    "vue": "^2.6.12"
+    "vue": "^3.0.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "babel-loader": "^8.2.2",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^7.0.0",
-    "css-loader": "^5.0.1",
-    "electron": "^11.1.0",
-    "eslint": "^7.16.0",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^4.5.0",
-    "lodash-webpack-plugin": "^0.11.6",
-    "mini-css-extract-plugin": "^1.3.3",
-    "node-sass": "^5.0.0",
-    "sass-loader": "^10.1.0",
-    "style-loader": "^2.0.0",
-    "url-loader": "^4.1.1",
-    "vue-loader": "^15.9.6",
-    "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.12",
-    "webpack": "^5.11.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.7.2"
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "cross-env": "^7.0.3",
+    "electron": "^13.1.7",
+    "electron-builder": "^22.11.7",
+    "naive-ui": "^2.15.5",
+    "sass": "^1.35.2",
+    "vfonts": "^0.1.0",
+    "vite": "^2.4.3"
+  },
+  "build": {
+    "appId": "testTask",
+    "productName": "testTask",
+    "copyright": "Copyright © 2021 Ananas",
+    "directories": {
+      "output": "releace"
+    }
   }
 }
