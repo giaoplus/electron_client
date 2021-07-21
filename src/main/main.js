@@ -5,10 +5,11 @@ function createWindow () {
   let isDev = process.env.NODE_ENV === 'development'
 
   const win = new BrowserWindow({
-    width: 900,
-    height: 600,
+    minWidth: 900,
+    minHeight: 600,
     frame: false,
     transparent: true,
+    vibrancy: 'ultra-dark',
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
