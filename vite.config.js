@@ -10,7 +10,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: path.resolve(__dirname, './src/view/index.html'),
-        dialog: path.resolve(__dirname, './src/view/dialog.html')
+        dialog: path.resolve(__dirname, './src/view/dialog/dialog.html')
       }
     },
     outDir: '../main/dist'

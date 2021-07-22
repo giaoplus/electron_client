@@ -13,6 +13,7 @@
     "vue": "^3.0.5"
   },
   "devDependencies": {
+    "@vicons/fluent": "^0.10.0",
     "@vitejs/plugin-vue": "^1.2.5",
     "@vue/compiler-sfc": "^3.0.5",
     "cross-env": "^7.0.3",
